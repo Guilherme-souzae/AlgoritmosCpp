@@ -1,6 +1,3 @@
-// Tema: Bolsa devoradora
-// Guilherme Souza Emergente, Felipe Ferreira de Carvalho Gabriel Pereira, João Guilherme Gonçalves Dias Reis
-// Esta versão do código não possui os Extras, esses serão enviados em arquivos diferentes
 #include <iostream>
 #include <list>
 #include <cmath>
@@ -38,8 +35,8 @@ struct Treenode
 typedef Treenode *Treenodeptr;
 
 
-// Funções
-// Inserção em árvores
+// FunÃ§Ãµes
+// InserÃ§Ã£o em Ã¡rvores
 void tInsereID(Treenodeptr &p, Item novo)
 {
 	if (p == NULL)
@@ -59,7 +56,7 @@ void tInsereID(Treenodeptr &p, Item novo)
 	}
 	else
 	{
-		cout << "\nID já cadastrado" << endl;
+		cout << "\nID jÃ¡ cadastrado" << endl;
 	}
 }
 
@@ -82,7 +79,7 @@ void tInsereName(Treenodeptr &p, Item novo)
 	}
 	else
 	{
-		cout << "\nNome já cadastrado" << endl;
+		cout << "\nNome jÃ¡ cadastrado" << endl;
 	}
 }
 
@@ -105,7 +102,7 @@ void tInsereRar(Treenodeptr &p, Item novo)
 	}
 }
 
-// Pesquisa em árvores
+// Pesquisa em Ã¡rvores
 Treenodeptr tPesqID(Treenodeptr p, int id)
 {
 	if (p == NULL) return NULL;
@@ -128,7 +125,7 @@ bool analise_poligonal()
 	list<Ponto> poligono;
 	Ponto pontotemp;
 	
-	cout << "\nDigite em ordem os pontos do polígono" << endl;
+	cout << "\nDigite em ordem os pontos do polÃ­gono" << endl;
 	cout << "Digite um valor menor que 0 para concluir" << endl;
 	
 	while (cin >> pontotemp.x >> pontotemp.y && pontotemp.x >= 0 && pontotemp.y >= 0)
@@ -148,8 +145,8 @@ bool analise_poligonal()
 				float distancia = sqrt(pow((p->x - pp->x),2) + pow((p->y - pp->y),2));
 				if (distancia >= 40)
 				{
-					cout << "\nA distância entre: (" << p->x << "," << p->y << ") e (" << pp->x << "," << pp->y << ") é de: " << distancia << " cm" << endl;
-					cout << "O item é grande demais para a bolsa" << endl;
+					cout << "\nA distÃ¢ncia entre: (" << p->x << "," << p->y << ") e (" << pp->x << "," << pp->y << ") Ã© de: " << distancia << " cm" << endl;
+					cout << "O item Ã© grande demais para a bolsa" << endl;
 					cout << "\nPor favor inicie um novo cadastro" << endl;
 					return false;
 				}
@@ -157,12 +154,12 @@ bool analise_poligonal()
 		}
 	}
 	
-	cout << "Nenhuma distância é maior que o diâmetro da bolsa!" << endl;
+	cout << "Nenhuma distÃ¢ncia Ã© maior que o diÃ¢metro da bolsa!" << endl;
 	cout << "Item cadastrado com sucesso!" << endl;
 	return true;
 }
 
-// Funções auxiliares
+// FunÃ§Ãµes auxiliares
 bool verificar_escola(string magia)
 {
 	if (magia == "Abjuracao") return true;
@@ -174,7 +171,7 @@ bool verificar_escola(string magia)
 	if (magia == "Necromancia") return true;
 	if (magia == "Transmutacao") return true;
 
-	cout << "Escola inválida" << endl;
+	cout << "Escola invÃ¡lida" << endl;
 	return false;
 }
 
@@ -233,11 +230,11 @@ void mostrar(Treenodeptr arvoreid, int id)
 	}
 	else
 	{
-		cout << "\nItem não encontrado" << endl;
+		cout << "\nItem nÃ£o encontrado" << endl;
 	}
 }
 
-// Percurso em árvores
+// Percurso em Ã¡rvores
 void emOrdem(Treenodeptr arvore)
 {
 	if (arvore != NULL)
@@ -292,17 +289,17 @@ void contaescola(Treenodeptr t)
 		}
 	}
 
-	cout << "-Abjuração: " << contador[0] << endl;
-	cout << "-Conjuração: " << contador[1] << endl;
-	cout << "-Adivinhação: " << contador[2] << endl;
+	cout << "-AbjuraÃ§Ã£o: " << contador[0] << endl;
+	cout << "-ConjuraÃ§Ã£o: " << contador[1] << endl;
+	cout << "-AdivinhaÃ§Ã£o: " << contador[2] << endl;
 	cout << "-Encantamento: " << contador[3] << endl;
-	cout << "-Evocação: " << contador[4] << endl;
-	cout << "-Ilusão: " << contador[5] << endl;
+	cout << "-EvocaÃ§Ã£o: " << contador[4] << endl;
+	cout << "-IlusÃ£o: " << contador[5] << endl;
 	cout << "-Necromancia: " << contador[6] << endl;
-	cout << "-Transmutação: " << contador[7] << endl;
+	cout << "-TransmutaÃ§Ã£o: " << contador[7] << endl;
 }
 
-// Remoção em árvores
+// RemoÃ§Ã£o em Ã¡rvores
 Treenodeptr tMenor(Treenodeptr &raiz)
 {
 	Treenodeptr t;
@@ -444,14 +441,14 @@ void tDesmatar(Treenodeptr &arvore)
 }
 
 
-// Funções de grafos
+// FunÃ§Ãµes de grafos
 void criagrafo(Treenodeptr arvoreid)
 {
 	int orig, dest, sim;
 	Treenodeptr origemptr, destinoptr;
 
 	cout << "Digite os ids e o valor de similaridade" << endl;
-	cout << "Digite um valor inválido para sair" << endl;
+	cout << "Digite um valor invÃ¡lido para sair" << endl;
 	while (cin >> orig >> dest >> sim && orig >= 0 && dest >= 0 && sim > 0)
 	{
 		origemptr = tPesqID(arvoreid, orig);
@@ -464,7 +461,7 @@ void criagrafo(Treenodeptr arvoreid)
 		}
 		else
 		{
-			cout << "Iten(s) não encontrado(s)" << endl;
+			cout << "Iten(s) nÃ£o encontrado(s)" << endl;
 		}
 	}
 }
@@ -515,7 +512,7 @@ int main()
 	Item itemtemp;
 	int inttemp;
 
-	// Inicialização:
+	// InicializaÃ§Ã£o:
 	cout << "RRRRARWWWWAR!!!! EU SOU A BOLSA DEVORADORA, ME DE ITENS AGORA!!!" << endl;
 	itemtemp = cadastrar();
 	tInsereID(arvoreid, itemtemp);
@@ -527,16 +524,16 @@ int main()
 
 	while (!exit)
 	{
-		cout << "\nSelecione uma opção válida" << endl;
+		cout << "\nSelecione uma opÃ§Ã£o vÃ¡lida" << endl;
 		cout << "0- Cadastrar novo item" << endl;
 		cout << "1- Mostrar dados de um item" << endl;
 		cout << "2- Definir Similaridade" << endl;
 		cout << "3- Listar itens por similaridade" << endl;
-		cout << "4- Listar por ordem alfabética" << endl;
+		cout << "4- Listar por ordem alfabÃ©tica" << endl;
 		cout << "5- Verificar por nome" << endl;
 		cout << "6- Listar por raridade" << endl;
 		cout << "7- Contar escola" << endl;
-		cout << "8- Remoção por raridade" << endl;
+		cout << "8- RemoÃ§Ã£o por raridade" << endl;
 		cout << "9- Sair" << endl;
 
 		cin >> opt;
@@ -574,7 +571,7 @@ int main()
 			{
 				cout << "Item encontrado" << endl;
 			}
-			else cout << "Item não encontrado" << endl;
+			else cout << "Item nÃ£o encontrado" << endl;
 			break;
 		
 		case 6:
